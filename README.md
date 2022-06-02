@@ -5,9 +5,11 @@ Eco server on ubuntu-20. Installs and updates server on container start. Run wit
 Running with docker:
 ``` 
 docker run \
---restart=always \
---name=steamcmd-eco \
--v ~/localserverpath:/eco \
+    --restart=always \
+    --name=steamcmd-eco \
+    -v ~/localserverpath:/eco \
+    -p 3000:3000
+    -p 3001:3001
 emackie/steamcmd-eco:latest 
 ```
 

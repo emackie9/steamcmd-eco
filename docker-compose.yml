@@ -9,6 +9,9 @@ services:
       - ECO_SERVER_PATH=${ECO_SERVER_PATH:-/eco}
     volumes:
       - eco_server:/eco
+    ports:
+      - 3000:3000
+      - 3001:3001
 
 volumes:
   eco_server:
