@@ -22,5 +22,5 @@ If running server long term, will want to schedule periodic restarts, through cr
 ```
 
 Dockerfile will expose the following ports:
-- 3000/tcp EcoServer
-- 3001/tcp EcoWebServer
+- `3000/tcp EcoServer`
+- `3001/tcp EcoWebServer`
