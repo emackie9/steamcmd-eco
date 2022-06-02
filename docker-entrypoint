@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "$ECO_SERVER_PATH"
+echo "$STEAMCMD_USER"
+echo "$STEAMCMD_PASS"
+
+export LD_LIBRARY_PATH=$ECO_SERVER_PATH/linux64:$LD_LIBRARY_PATH
+
+steamcmd \
+    +force_install_dir $ECO_SERVER_PATH \
+    +login $STEAMCMD_USER $STEAMCMD_PASS \
+    +app_update $STEAMCMD_ID validate \
+    +quit
+
+cd $ECO_SERVER_PATH && exec $ECO_SERVER_PATH/EcoServer

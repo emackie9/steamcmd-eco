@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  steamcmd-eco:
+    build:
+      context: .
+    image: steamcmd-eco:latest
+    container_name: steamcmd-eco
+    environment:
+      - ECO_SERVER_PATH=${ECO_SERVER_PATH:-/eco}
+      - STEAMCMD_USER=${STEAMCMD_USER:-anonymous}
+      - STEAMCMD_PASS=${STEAMCMD_PASS:-}
+    volumes:
+      - eco_server:/eco
+      
+volumes:
+  eco_server:
+    name: eco_server
+    driver: local
